@@ -113,7 +113,7 @@ class _menu extends State<admin_menu> {
                       size: 60,
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/menu_add');
+                      Navigator.pushReplacementNamed(context, '/menu_add');
                     },
                   ),
                 ),

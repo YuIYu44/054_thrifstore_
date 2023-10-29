@@ -66,22 +66,25 @@ class _add extends State<admin_add> {
                 .map((entry) => entry.value)
                 .join(' & ')
           ]);
-          ScaffoldMessenger.of(context).showSnackBar(
-              snack(context, "Berhasil Ditambahkan!", const Color(0XEEFFD600)));
           await copyImageToFolder(_image);
           refreshPage();
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => const admin_add()),
           );
+          ScaffoldMessenger.of(context).showSnackBar(
+              snack(context, "Berhasil Ditambahkan!", const Color(0XEEFFD600)));
+
           return 0;
         }
-        ScaffoldMessenger.of(context).showSnackBar(snack(context,
-            "Choose only 1 or 2 Category", const Color.fromARGB(150, 255, 0, 0)));
+        ScaffoldMessenger.of(context).showSnackBar(snack(
+            context,
+            "Choose only 1 or 2 Category",
+            const Color.fromARGB(150, 255, 0, 0)));
         return 0;
       }
-      ScaffoldMessenger.of(context).showSnackBar(snack(
-          context, "Image Can't Be Empty", const Color.fromARGB(150, 255, 0, 0)));
+      ScaffoldMessenger.of(context).showSnackBar(snack(context,
+          "Image Can't Be Empty", const Color.fromARGB(150, 255, 0, 0)));
       return 0;
     }
     ScaffoldMessenger.of(context).showSnackBar(snack(
@@ -131,7 +134,8 @@ class _add extends State<admin_add> {
                           size: 35,
                         ),
                         onPressed: () {
-                          Navigator.pop(context);
+                          Navigator.pushReplacementNamed(
+                              context, '/menu_admin');
                         }),
                   ),
                   Row(
